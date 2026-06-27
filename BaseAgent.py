@@ -57,7 +57,6 @@ def create_agent(config: Dict[str, Any]) -> Any:
         "smolagent": _load_smolagent,
         "llama_index": _load_llama_index_agent,
     }
-
     if backend == "all":
         return {
             name: _create_backend_agent(name, agent_loaders, config)

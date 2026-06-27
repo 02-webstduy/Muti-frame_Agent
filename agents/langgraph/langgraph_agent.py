@@ -6,6 +6,7 @@ from langgraph.graph import END, START, StateGraph
 
 from agents.langgraph import create_llm
 from agents.model_config import extract_response_text
+from memory import store
 
 
 class AgentState(TypedDict):
@@ -71,4 +72,5 @@ class LangGraphAgent:
                 "response": {},
             }
         )
+        store(query,result)
         return result["response"]

@@ -1,4 +1,5 @@
 from __future__ import annotations
+from memory import store
 
 from typing import Any, Dict
 
@@ -16,6 +17,7 @@ class LlamaIndexAgent:
 
     def run(self, query: str) -> Dict[str, Any]:
         response = self.llm.complete(query)
+        store(query,response)
         return {
             "framework": self.framework_name,
             "query": query,

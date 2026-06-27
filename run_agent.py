@@ -9,7 +9,6 @@ from BaseAgent import create_agent, load_config
 def run_agent(query: str, config_path: str = "config/config.yaml") -> Any:
     config = load_config(config_path)
     agent = create_agent(config)
-
     if isinstance(agent, dict):
         return {name: current_agent.run(query) for name, current_agent in agent.items()}
 
@@ -17,7 +16,7 @@ def run_agent(query: str, config_path: str = "config/config.yaml") -> Any:
 
 
 if __name__ == "__main__":
-    demo_query = "current selected framework"
+    demo_query = ""
     result = run_agent(demo_query)
-    pprint(result)
+    print(result)
 

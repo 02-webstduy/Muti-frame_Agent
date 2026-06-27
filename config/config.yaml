@@ -1,10 +1,10 @@
 # Supported values: langgraph, smolagent, llama_index, all
-agent_backend: langgraph
+agent_backend: smolagent
 
 model:
-  name: gpt-3.5-turbo
+  name: "/mnt/e/study/Qwen2.5"
   api_key: sk-xxxx
-  base_url: https://api.openai.com/v1
+  base_url: http://localhost:8000/v1
 
 tools:
   - name: search
