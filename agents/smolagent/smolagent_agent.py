@@ -5,8 +5,6 @@ from typing import Any, Dict
 from agents.model_config import extract_response_text
 from agents.smolagent import create_llm
 from smolagents import ToolCallingAgent
-from memory import store
-
 
 class SmolAgent:
     """Small wrapper used to unify the project agent interface."""
@@ -25,7 +23,6 @@ class SmolAgent:
 
     def run(self, query: str) -> Dict[str, Any]:
         response = self.agent.run(query)
-        store(query,response)
         return {
             "framework": self.framework_name,
             "query": query,
